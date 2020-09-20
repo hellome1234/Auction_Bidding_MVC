@@ -21,8 +21,10 @@ namespace Auction_Bidding.Web.Migrations
 
             modelBuilder.Entity("Auction_Bidding.Web.Data.Entities.Auction", b =>
                 {
-                    b.Property<string>("AuctionID")
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<int>("AuctionID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("AuctionCoverPhotoURL")
                         .HasColumnType("nvarchar(max)");

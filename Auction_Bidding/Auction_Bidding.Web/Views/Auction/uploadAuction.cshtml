@@ -1,0 +1,57 @@
+﻿@model AuctionModel
+@{
+
+    ViewData["Title"] = "uploadAuction";
+}
+
+<div class="container">
+    <h3 class="display-4">Add New Book</h3>
+    <hr />
+
+    @if (ViewBag.isSuccess == true)
+    {
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            <strong>Congratulations!</strong> Auction has been successfully Created<br />
+            Click <a asp-route="UpdateAuction" asp-route-id="@ViewBag.auctionId">here</a> to view the details
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+    }
+
+    @* Upload Form *@
+    <form method="post" enctype="multipart/form-data" asp-action="uploadAuction" asp-controller="Auction">
+        <div class="form-group">
+            <label asp-for="@Model.AuctionName"></label>
+            <input asp-for="@Model.AuctionName" class="form-control" id="">
+            <span asp-validation-for="@Model.AuctionName" class="text-danger"></span><br />
+        </div>
+        <div class="form-group">
+            <label asp-for="@Model.AuctionPrice"></label>
+            <input asp-for="@Model.AuctionPrice" class="form-control" id="">
+            <span asp-validation-for="@Model.AuctionPrice" class="text-danger"></span><br />
+        </div>
+        <div class="form-group">
+            <label asp-for="@Model.AuctionStartingDate"></label>
+            <input asp-for="@Model.AuctionStartingDate" class="form-control" id="">
+            <span asp-validation-for="@Model.AuctionStartingDate" class="text-danger"></span><br />
+        </div>
+        <div class="form-group">
+            <label asp-for="@Model.AuctionEndingDate"></label>
+            <input asp-for="@Model.AuctionEndingDate" class="form-control" id="">
+            <span asp-validation-for="@Model.AuctionEndingDate" class="text-danger"></span><br />
+        </div>
+        <div class="form-group">
+            <label asp-for="@Model.Discription"></label>
+            <input asp-for="@Model.Discription" class="form-control" id="">
+            <span asp-validation-for="@Model.Discription" class="text-danger"></span><br />
+        </div>
+        <div class="form-group">
+            <label asp-for="@Model.AuctionCoverPhoto"></label>
+            <input asp-for="@Model.AuctionCoverPhoto" class="form-control" id="">
+        </div>
+        <div class="form-group">
+            <input type="submit" value="UploadBook" class="btn btn-primary" />
+        </div>
+    </form>
+</div>

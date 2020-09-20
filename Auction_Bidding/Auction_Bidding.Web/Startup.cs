@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Auction_Bidding.Web.Data;
+using Auction_Bidding.Web.Repository;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -29,6 +30,7 @@ namespace Auction_Bidding.Web
 
             //resolve the DbContext dependecies
             services.AddDbContext<AuctionBiddingContext>(options => options.UseSqlServer(@"Server=DESKTOP-A72R8Q6\SQLEXPRESS;Database=AuctionBidding;Integrated Security= True"));
+            services.AddScoped<IAuctionRepository, AuctionRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -44,18 +46,18 @@ namespace Auction_Bidding.Web
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
-            app.UseHttpsRedirection();
+            //app.UseHttpsRedirection();
             app.UseStaticFiles();
 
             app.UseRouting();
 
-            app.UseAuthorization();
+            //app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
-                    name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                    name: "Default",
+                    pattern: "{Controller=Home}/{Action=Index}/{id?}");
             });
         }
     }

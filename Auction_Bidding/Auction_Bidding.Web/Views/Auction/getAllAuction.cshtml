@@ -1,0 +1,16 @@
+﻿@model IEnumerable<AuctionModel>
+@{ 
+    ViewData["Title"] = "Auctions";
+}
+    <div id="view-all">
+        <div class="container" >
+            <div class="row">
+                <div class="card-deck">
+                    @foreach (AuctionModel auction in Model)
+                    {
+                        <partial name="_AuctionCard" model="auction" />
+                    }
+                </div>
+            </div>
+        </div>
+    </div>

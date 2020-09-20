@@ -7,7 +7,7 @@ namespace Auction_Bidding.Web.Data.Entities
 {
     public class Auction
     {
-        public string AuctionID { get; set; }
+        public int AuctionID { get; set; }
         public string AuctionName { get; set; }
         public decimal AuctionPrice { get; set; }
         public DateTime AuctionStartingDate { get; set; }
