@@ -20,6 +20,13 @@ using Auction_Bidding.Web;
 #line hidden
 #nullable disable
 #nullable restore
+#line 5 "D:\cources\c#\.NetCore\Examples\Auction_Bidding\Auction_Bidding\Auction_Bidding.Web\Views\_ViewImports.cshtml"
+using Microsoft.Extensions.Configuration;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
 #line 2 "D:\cources\c#\.NetCore\Examples\Auction_Bidding\Auction_Bidding\Auction_Bidding.Web\Views\Auction\_ViewImports.cshtml"
 using Auction_Bidding.Web.Models;
 
@@ -27,7 +34,7 @@ using Auction_Bidding.Web.Models;
 #line hidden
 #nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"553e989ff830d32fbede20faa669a4c126c6b324", @"/Views/Auction/_ViewImports.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"e2ab5ce36489e52040c6b9d8580f3d355300081b", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"89c84c1235c4725d5c57232ad91582c320ff2955", @"/Views/_ViewImports.cshtml")]
     public class Views_Auction__ViewImports : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
     {
         #pragma warning disable 1998
@@ -36,6 +43,8 @@ using Auction_Bidding.Web.Models;
             WriteLiteral("\r\n");
         }
         #pragma warning restore 1998
+        [global::Microsoft.AspNetCore.Mvc.Razor.Internal.RazorInjectAttribute]
+        public IConfiguration _configuration { get; private set; }
         [global::Microsoft.AspNetCore.Mvc.Razor.Internal.RazorInjectAttribute]
         public global::Microsoft.AspNetCore.Mvc.ViewFeatures.IModelExpressionProvider ModelExpressionProvider { get; private set; }
         [global::Microsoft.AspNetCore.Mvc.Razor.Internal.RazorInjectAttribute]

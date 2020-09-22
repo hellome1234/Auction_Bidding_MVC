@@ -1,12 +1,13 @@
 ﻿@model AuctionModel
 
-<div class="card border-secondary mb-3 text-center" style="width: 18rem;">
-    <div class="card-body">
-        <p class="card-title">@Model.AuctionName</p>
-        <img class="card-img" src="@Model.AuctionCoverPhotoURL" alt="Card image cap">
+    <div class="card border-secondary mb-3 text-center" style="width: 18rem;">
+        <div class="card-body">
+            <p class="card-title">@Model.AuctionName</p>
+            <img class="card-img" src="@Model.AuctionCoverPhotoURL" alt="Card image cap">
+        </div>
+        <div class="card-footer">
+            <h5 class="card-text">$@Model.AuctionPrice</h5>
+            <a onclick="jQueryAjaxDelete('@Url.Action("DeleteAuction","Auction",new { auctionId = Model.AuctionID },Context.Request.Scheme)')" class="btn btn-info text-white"><i class="fas fa-pencil-alt"></i> </a>
+            <a onclick="showInPopup('@Url.Action("UpdateAuction","Auction", new { auctionId = Model.AuctionID},Context.Request.Scheme)')">Edit</a>
+        </div>
     </div>
-    <div class="card-footer">
-        <h5 class="card-text">$@Model.AuctionPrice</h5>
-        <a onclick="jQueryAjaxDelete('@Url.Action("DeleteAuction","Auction",new { auctionId = Model.AuctionID },Context.Request.Scheme)')" class="btn btn-info text-white"><i class="fas fa-pencil-alt"></i> </a>
-    </div>
-</div>

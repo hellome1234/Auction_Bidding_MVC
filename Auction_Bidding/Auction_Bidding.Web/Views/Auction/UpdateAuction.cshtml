@@ -3,7 +3,7 @@
     ViewData["Title"] = "UpdateAuction";
 }
   <div class="container">
-        <form method="post" enctype="multipart/form-data" asp-action="UpdateAuction" asp-controller="Auction">
+        <form method="post" enctype="multipart/form-data" asp-action="UpdateAuction" asp-controller="Auction" onsubmit="return jQueryUploadAuction(this);">
             <input asp-for="@Model.AuctionID" type="hidden" />
             <div class="form-group">
                 <label asp-for="@Model.AuctionName"></label>
@@ -32,7 +32,7 @@
                 <input asp-for="@Model.Discription" class="form-control" id="">
             </div>
             <div class="form-group">
-                <input type="submit" value="UploadBook" class="btn btn-primary" />
+                <input type="submit" value="UploadBook" class="btn btn-primary btn-block" />
             </div>
         </form>
 </div>

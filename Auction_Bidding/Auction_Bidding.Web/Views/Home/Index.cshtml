@@ -1,8 +1,28 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
+﻿@model IEnumerable<AuctionModel>
+@{
+    ViewData["Title"] = "Auction&&Bidding";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+
+
+    
+        <div class="container">
+            <div id="carouselExampleSlidesOnly" class="carousel" data-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img class="d-block w-100 " src="~/Auction/c6d6d70c4a0bb88e-2048x1024.jpg" alt="Banner">
+                    </div>
+                </div>
+            </div>
+            <div id="view-all">
+                <div class="row">
+                    <div class="card-deck">
+                        @foreach (AuctionModel auction in Model)
+                        {
+                            <partial name="_AuctionCard" model="auction" />
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+  
